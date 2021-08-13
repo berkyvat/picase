@@ -27,7 +27,7 @@ ENV JAVA_HOME /usr/lib/jvm/default-jvm/
 CMD ["mvn", "--version"]
 COPY pom.xml /data 
 VOLUME /tmp
-RUN mvn clean install
+#RUN mvn clean install
 ADD target/*.jar app.jar
 ENV JAVA_OPTS=""
 ENTRYPOINT [ "sh", "-c", "java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar /app.jar" ]
