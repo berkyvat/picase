@@ -1,9 +1,10 @@
 FROM maven:latest as maven
-COPY ./pom.xml ./pom.xml
-COPY ./src ./src
-RUN mvn dependency:go-offline -B
-RUN mvn package
+COPY src /home/app/src
+COPY pom.xml /home/app
+RUN mvn -f /home/app/pom.xml clean package
+
 FROM openjdk:11-jre-slim
-WORKDIR ./
-COPY --from=maven ./SimpleJavaProject-*.jar ./SimpleJavaProject.jar
-CMD ["java", "-jar", "./SimpleJavaProject.jar"]
+RUN addgroup -S spring && adduser -S spring -G spring
+USER spring:spring
+COPY --from=build /home/app/target/*.war app.war
+ENTRYPOINT ["java","-jar","/app.war"]
