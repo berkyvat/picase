@@ -25,7 +25,7 @@ ENV JAVA_HOME /usr/lib/jvm/default-jvm/
 
 # Define default command.
 CMD ["mvn", "--version"]
-WORKDIR /
+COPY pom.xml /data 
 VOLUME /tmp
 RUN mvn clean install
 ADD target/*.jar app.jar
