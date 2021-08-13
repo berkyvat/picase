@@ -1,4 +1,5 @@
-FROM adoptopenjdk/openjdk11:latest
+#FROM adoptopenjdk/openjdk11:latest
+FROM alpine as build
 ARG MAVEN_VERSION=3.6.3
 ARG USER_HOME_DIR="/root"
 ARG BASE_URL=https://apache.osuosl.org/maven/maven-3/${MAVEN_VERSION}/binaries
