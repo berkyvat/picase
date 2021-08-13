@@ -1,4 +1,4 @@
-FROM adoptopenjdk/openjdk11:latest AS target
+FROM adoptopenjdk/openjdk11:latest
 VOLUME /tmp
 ADD target/*.jar app.jar
 ENV JAVA_OPTS=""
