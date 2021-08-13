@@ -18,13 +18,14 @@ ENV MAVEN_HOME /usr/share/maven
 ENV MAVEN_CONFIG "$USER_HOME_DIR/.m2"
 
 # Define working directory.
-#WORKDIR /data
+WORKDIR /data
 
 # Define commonly used JAVA_HOME variable
 ENV JAVA_HOME /usr/lib/jvm/default-jvm/
 
 # Define default command.
 CMD ["mvn", "--version"]
+WORKDIR /
 VOLUME /tmp
 RUN mvn clean install
 ADD target/*.jar app.jar
