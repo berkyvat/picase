@@ -1,9 +1,12 @@
-FROM maven:latest as maven
-COPY src /home/app/src
-COPY pom.xml /home/app
-RUN mvn -f /home/app/pom.xml clean package
 
-FROM openjdk:11-jre-slim
+FROM maven:3.6.3-openjdk-11-slim AS build
+RUN mkdir -p /workspace
+WORKDIR /workspace
+COPY pom.xml /workspace
+COPY src /workspace/src
+RUN mvn -B package --file pom.xml -DskipTests
 
-COPY --from=maven /home/app/target/*.war app.war
-ENTRYPOINT ["java","-jar","/app.war"]
+FROM openjdk:11-slim
+COPY --from=build /workspace/target/*jar-with-dependencies.jar app.jar
+EXPOSE 6379
+ENTRYPOINT ["java","-jar","app.jar"]
