@@ -12,20 +12,30 @@ Write a README file explaining all details.
 
 Yukarıda verilen case study kapsamında;
 
-AWS account oluşturuldu
-S3 Bucket oluşturuldu
-Api için java-spring-boot-maven kullanıldı
-İstenilen endpointler ve işlevleri oluşturuldu
-  xxx/list endpointi s3 bucket objectlerini dönmektedir
-  xxx/put Verilen json formatındaki datayı oluşturulan S3 Bucket a kaydetmektedir
-  xxx/get/{key} Verilen key ile eşleşen objenin içeriğini dönmektedir
-Dockerfile oluşturuldu
-Github actions kullanılarak oluşuturlan pipeline sırasıyla build-test-deploy(dockerhub-aws ecs) adımlarından oluşmaktadır
-Oluşturulan Docker image ECS üzerinden EC2 instance da koşmak üzere gerekli configurasyon ayarları yapıldı. Ancak;
-  Github actions'da görebileceğiniz "No Container Instances were found in your cluster" hatası ile karşılaşıldı. Ekran görüntüsüne eklerde ulaşılabilir. Aslında EC2 instance'ı 
-  başarılı şekilde oluşturup ECS ile konfigurasyonlarını yapmıştım. Bu sorunun neden kaynaklandığı ile ilgili fikrim IAM role konfigurasyonu ile ilgili olabileceği yönünde gelişti.
-  Bu nedenle yeni bir EC2 instance yaratma yolunu seçtim. Ancak, "this account is currently blocked and not recognized as a valid account" hatası ile karşılaşıldı.Ekran görüntüsüne 
-  eklerde ulaşılabilir. Sebebini bilmiyorum ama bu çalışmayı yaparken hem github hesabım suspend oldu hem aws hesabım, bunlar sıfırdan yeni hesaplar açıp geliştirmeye devam etmem
-  ile atlatıldı. Hali hazırda yeterince geciktiğim için tekrar bütün aşamalara baştan başlamamak ve şu anki hali ile size gönderme kararı aldım.
+AWS account oluşturuldu <br/>
+
+S3 Bucket oluşturuldu <br/>
+
+Api için java-spring-boot-maven kullanıldı <br/>
+
+İstenilen endpointler ve işlevleri oluşturuldu <br/>
+  ***xxx/list endpointi s3 bucket objectlerini dönmektedir <br/>
+  ***xxx/put Verilen json formatındaki datayı oluşturulan S3 Bucket a kaydetmektedir <br/>
+  ***xxx/get/{key} Verilen key ile eşleşen objenin içeriğini dönmektedir <br/>
+  
+Dockerfile oluşturuldu <br/>
+
+Github actions kullanılarak oluşuturlan pipeline sırasıyla build-test-deploy(dockerhub-aws ecs) adımlarından oluşmaktadır <br/>
+
+Oluşturulan Docker image ECS üzerinden EC2 instance da koşmak üzere gerekli configurasyon ayarları yapıldı. <br/>
+  
+  Ancak;Github actions'da görebileceğiniz "No Container Instances were found in your cluster" hatası ile karşılaşıldı. <br/>
+  Ekran görüntüsüne eklerde ulaşılabilir. <br/>
+  Aslında EC2 instance'ı başarılı şekilde oluşturup ECS ile konfigurasyonlarını yapmıştım. <br/>
+  Bu sorunun neden kaynaklandığı ile ilgili fikrim IAM role konfigurasyonu ile ilgili olabileceği yönünde gelişti.<br/>
+  Bu nedenle yeni bir EC2 instance yaratma yolunu seçtim. Ancak, "this account is currently blocked and not recognized as a valid account" hatası ile karşılaşıldı. <br/>
+  Ekran görüntüsüne eklerde ulaşılabilir. Sebebini bilmiyorum ama bu çalışmayı yaparken hem github hesabım suspend oldu hem aws hesabım, <br/>
+  bunlar sıfırdan yeni hesaplar açıp geliştirmeye devam etmem ile atlatıldı. <br/>
+  Hali hazırda yeterince geciktiğim için tekrar bütün aşamalara baştan başlamamak ve şu anki hali ile size gönderme kararı aldım.<br/>
   
 
