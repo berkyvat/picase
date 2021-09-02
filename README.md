@@ -10,7 +10,7 @@ Use Github actions to create pipeline to build and test.
 Deploy your application to AWS ECS service and configure AWS IAM roles/policies properly. You can use either AWS Fargate or EC2.
 Write a README file explaining all details.
 
-Yukarıda verilen case study kapsamında;
+Yukarıda verilen case study kapsamında;d
 
 AWS account oluşturuldu <br/>
 
